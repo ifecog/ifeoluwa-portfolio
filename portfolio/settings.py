@@ -94,7 +94,7 @@ DATABASES = {
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': config('PASSWORD', default=''),
-        'HOST': config('HOST', default='localhost'),
+        'HOST': config('HOST', default=''),
         'PORT': '6845',
     }
 }
