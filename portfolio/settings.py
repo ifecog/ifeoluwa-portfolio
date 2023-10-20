@@ -145,14 +145,23 @@ MEDIA_ROOT = BASE_DIR / 'media'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Email settings
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='')
-SERVER_EMAIL = config('SERVER_EMAIL', default='')
+# DEFAULT_FROM_EMAIL = 'config('DEFAULT_FROM_EMAIL', default='')'
+# SERVER_EMAIL = config('SERVER_EMAIL', default='')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST', default='localhost')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=False, cast=bool)
+
+# DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='')
+# SERVER_EMAIL = config('SERVER_EMAIL', default='')
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = config('EMAIL_HOST', default='localhost')
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+# EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
+# EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=False, cast=bool)
 
 
 # Default primary key field type
