@@ -54,7 +54,7 @@ class Project(models.Model):
 
 
 class Service(models.Model):
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=100)
     details = models.TextField()
 
     def __str__(self):

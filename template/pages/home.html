@@ -26,6 +26,11 @@
 <!-- section -->
 
 <section class="site-section" id="section-about">
+    <style>
+        .social-item {
+          font-size: 30px; /* Adjust the size as needed */
+        }
+    </style>
   <div class="container">
     {% for about in abouts %}
     <div class="row mb-5 align-items-center">
@@ -39,7 +44,24 @@
       <div class="col-lg-5 pl-lg-5">
         <div class="section-heading">
           <h2>About <strong>Me</strong></h2>
+          <div class="col-md-12">
+            <p>
+              <a href="{{about.linkedin_link}}" class="social-item" target="_blank"
+                ><span class="icon-linkedin2"></span
+              ></a>
+              <a href="{{about.github_link}}" class="social-item" target="_blank"
+                ><span class="icon-github2"></span
+              ></a>
+              <a href="{{about.twitter_link}}" class="social-item" target="_blank"
+                ><span class="icon-twitter"></span
+              ></a>
+              <a href="{{about.instagram_link}}" class="social-item" target="_blank"
+                ><span class="icon-instagram2"></span
+              ></a>
+            </p>
+          </div>
         </div>
+        
         <p class="mb-5">{{about.body}}</p>
         <p>
           <a
@@ -184,6 +206,7 @@
       </div>
     </div>
     <div class="row">
+      {% for service in services %}
       <div class="col-md-6 col-lg-4 text-center mb-5">
         <div
           class="site-service-item site-animate"
@@ -192,12 +215,9 @@
           <span class="icon">
             <span class="icon-browser2"></span>
           </span>
-          <h3 class="mb-4">Web Design</h3>
+          <h3 class="mb-4">{{service.name}}</h3>
           <p>
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts. Separated they
-            live in Bookmarksgrove right at the coast of the Semantics, a large
-            language ocean.
+            {{service.details}}
           </p>
           <p>
             <a href="#" class="site-link"
@@ -206,48 +226,7 @@
           </p>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 text-center mb-5">
-        <div
-          class="site-service-item site-animate"
-          data-animate-effect="fadeIn"
-        >
-          <span class="icon">
-            <span class="icon-presentation"></span>
-          </span>
-          <h3 class="mb-4">Search Engine Optimization</h3>
-          <p>
-            A small river named Duden flows by their place and supplies it with
-            the necessary regelialia. It is a paradisematic country, in which
-            roasted parts of sentences fly into your mouth.
-          </p>
-          <p>
-            <a href="#" class="site-link"
-              >Learn More <i class="icon-chevron-right"></i
-            ></a>
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 text-center mb-5">
-        <div
-          class="site-service-item site-animate"
-          data-animate-effect="fadeIn"
-        >
-          <span class="icon">
-            <span class="icon-video2"></span>
-          </span>
-          <h3 class="mb-4">Video Editing</h3>
-          <p>
-            Even the all-powerful Pointing has no control about the blind texts
-            it is an almost unorthographic life One day however a small line of
-            blind text by the name of Lorem Ipsum decided to leave for the far
-            World of Grammar.
-          </p>
-          <p>
-            <a href="#" class="site-link"
-              >Learn More <i class="icon-chevron-right"></i
-            ></a>
-          </p>
-        </div>
+      {% endfor %}
       </div>
     </div>
   </div>
