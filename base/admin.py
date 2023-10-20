@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import About
+from .models import About, Skill
 from django.utils.html import format_html
 
 # Register your models here.
@@ -17,3 +17,4 @@ class AboutAdmin(admin.ModelAdmin):
 
 
 admin.site.register(About, AboutAdmin)
+admin.site.register(Skill)
