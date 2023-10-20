@@ -94,7 +94,7 @@ DATABASES = {
         'USER': config('USER', default='mydefaultvalue'),
         'PASSWORD': config('PASSWORD', default='mydefaultvalue'),
         'HOST': 'containers-us-west-128.railway.app',
-        'PORT': config('PORT', default='mydefaultvalue'),
+        'PORT': '6845',
     }
 }
 
