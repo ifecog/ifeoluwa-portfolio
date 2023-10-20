@@ -15,8 +15,8 @@
         <h1 class="site-heading site-animate">
           Hello, I'm <strong class="d-block">{{about.name}}</strong>
         </h1>
-        <strong class="d-block text-white text-uppercase letter-spacing"
-          >and I am a {{about.title}}</strong
+        <strong class="d-block text-white letter-spacing"
+          >I am a {{about.title}}</strong
         >
       </div>
     </div>
@@ -67,21 +67,13 @@
       <div class="section-heading text-center col-md-12">
         <h2>Featured <strong>Skills</strong></h2>
       </div>
-      <div class="text_center">
-        <ul class="skills__list">
-          <li class="btn btn--plain">Python</li>
-          <li class="skills__list-item btn btn--plain">Cloud Computing</li>
-          <li class="btn btn--plain">Databricks</li>
-          <li class="btn btn--plain">SQL</li>
-          <li class="btn btn--plain">R</li>
-          <li class="btn btn--plain">Power BI</li>
-          <li class="btn btn--plain">SSIS</li>
-          <li class="btn btn--plain">Git</li>
-          <li class="btn btn--plain">Machine Learning</li>
-          <li class="btn btn--plain">Microsoft Excel</li>
-          <li class="btn btn--plain">Plotly Dash</li>
-          <li class="btn btn--plain">Pandas Dataframe</li>
-          <li class="btn btn--plain">Vaex Dataframe</li>
+      <div>
+        <ul class="skills__list" class="text_center">
+          {% for skill in skills %}
+          <li class="btn btn--plain" style="text-transform: none">
+            {{skill.name}}
+          </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
