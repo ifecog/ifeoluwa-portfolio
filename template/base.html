@@ -41,6 +41,33 @@
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="{% static 'js/custom.js' %}"></script>
 
+    <!-- Include jQuery and Isotope scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+    <!-- Your JavaScript code for filtering -->
+    <script>
+      $(document).ready(function () {
+        // Initialize Isotope
+        var $grid = $('.grid').isotope({
+          itemSelector: '.single-portfolio',
+          layoutMode: 'fitRows',
+        })
+
+        // Filter items on button click
+        $('.filters ul li').on('click', function () {
+          var filterValue = $(this).attr('data-filter')
+          $grid.isotope({filter: filterValue})
+        })
+
+        // Change active class on buttons
+        $('.filters ul li').on('click', function () {
+          $('.filters ul li').removeClass('active')
+          $(this).addClass('active')
+        })
+      })
+    </script>
+
     <!-- Google Map -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     	<script src="{% static 'js/google-map.js' %}"></script> -->

@@ -11,7 +11,7 @@ def home(request):
     skills = Skill.objects.all()
     personal_projects = Project.objects.filter(type='personal').order_by('-id')
     contributions_projects = Project.objects.filter(type='contributions').order_by('-id')
-    services = Service.objects.order_by('-id')
+    services = Service.objects.order_by('id')
     
     if request.method == 'POST':
         form = ContactForm(request.POST)
