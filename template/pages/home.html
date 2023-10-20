@@ -99,52 +99,75 @@
 
     <div class="filters-content">
       <div class="row grid">
+        {% for contribution in contributions %}
+        <div class="single-portfolio col-sm-4 {{contribution}}">
+          <div class="p-inner">
+            <h4>{{contribution.name}}</h4>
+          </div>
+          <div class="relative">
+            <div class="thumb">
+              <div class="overlay overlay-bg"></div>
+              <img
+                class="image img-fluid"
+                src="{{contribution.photo.url}}"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="mini-buttons text-center">
+            <a
+              href="{{contribution.web_url}}"
+              class="btn btn-primary btn-sm"
+              target="_blank"
+              >Live App</a
+            >
+            <a
+              href="{{contribution.github_url}}"
+              class="btn btn-secondary btn-sm"
+              target="_blank"
+              >GitHub</a
+            >
+          </div>
+          <br />
+          <div class="p-inner">
+            <div class="cat">{{contribution.description}}</div>
+          </div>
+        </div>
+        {% endfor %} {% for personal in personals %}
         <div class="single-portfolio col-sm-4 all personal">
           <div class="p-inner">
-            <h4>Square Box Mockup</h4>
+            <h4>{{personal.name}}</h4>
           </div>
           <div class="relative">
             <div class="thumb">
               <div class="overlay overlay-bg"></div>
               <img
                 class="image img-fluid"
-                src="{% static 'images/p1.jpg' %}"
+                src="{{personal.photo.url}}"
                 alt=""
               />
             </div>
           </div>
           <div class="mini-buttons text-center">
-            <a href="" class="btn btn-primary btn-sm">Live App</a>
-            <a href="" class="btn btn-secondary btn-sm">GitHub</a>
+            <a
+              href="{{personal.web_url}}"
+              class="btn btn-primary btn-sm"
+              target="_blank"
+              >Live App</a
+            >
+            <a
+              href="{{personal.github_url}}"
+              class="btn btn-secondary btn-sm"
+              target="_blank"
+              >GitHub</a
+            >
           </div>
           <br />
           <div class="p-inner">
-            <div class="cat">Mockup</div>
+            <div class="cat">{{personal.description}}</div>
           </div>
         </div>
-        <div class="single-portfolio col-sm-4 all contribution">
-          <div class="p-inner">
-            <h4>Square Box Mockup</h4>
-          </div>
-          <div class="relative">
-            <div class="thumb">
-              <div class="overlay overlay-bg"></div>
-              <img
-                class="image img-fluid"
-                src="{% static 'images/p2.jpg' %}"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="mini-buttons text-center">
-            <a href="" class="btn btn-primary btn-sm">Live App</a>
-            <a href="" class="btn btn-secondary btn-sm">GitHub</a>
-          </div>
-          <br />
-          <div class="p-inner">
-            <div class="cat">Mockup</div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
