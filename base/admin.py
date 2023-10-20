@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import About, Skill, Project, Service
+from .models import About, Skill, Project, Service, Contact
 from django.utils.html import format_html
 
 # Register your models here.
@@ -24,8 +24,14 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display_links = ('name', 'thumbnail')
 
 
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'email')
+    list_display_links = ('name', 'email')
+
+
 
 admin.site.register(About, AboutAdmin)
 admin.site.register(Skill)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Service)
+admin.site.register(Contact, ContactAdmin)
