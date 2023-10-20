@@ -34,3 +34,20 @@ class Skill(models.Model):
     
     def __str__(self):
         return self.name
+
+
+class Project(models.Model):
+    TYPE_CHOICES = (
+        ('personal', 'Personal'),
+        ('contributions', 'Contributions')
+    )
+    
+    name = models.CharField(max_length=40)
+    photo = models.ImageField(upload_to='projects/')
+    web_url = models.URLField(max_length=100, null=True, blank=True)
+    github_url = models.URLField(max_length=100, null=True, blank=True)
+    description = models.TextField()
+    type = models.CharField(max_length=15, choices=TYPE_CHOICES, default='personal')
+
+    def __str__(self):
+        return self.name
