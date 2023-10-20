@@ -144,14 +144,14 @@ MEDIA_ROOT = BASE_DIR / 'media'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Email settings
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='mydefaultvalue')
-SERVER_EMAIL = config('SERVER_EMAIL', default='mydefaultvalue')
-EMAIL_BACKEND = config('EMAIL_BACKEND', default='mydefaultvalue')
-EMAIL_HOST = config('EMAIL_HOST', default='mydefaultvalue')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='mydefaultvalue')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='mydefaultvalue')
-EMAIL_PORT = config('EMAIL_PORT', default='mydefaultvalue')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+SERVER_EMAIL = config('SERVER_EMAIL')
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
 
 # Default primary key field type
