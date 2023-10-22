@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.core.mail import send_mail
 
 from .models import About, Skill, Project, Service, Contact
@@ -32,6 +33,7 @@ def home(request):
                 email,
                 ['ifeoluwasamson90@gmail.com'],  # Replace with your email address
             )
+            messages.success(request, 'Your message has been successfully sent!')
 
             return redirect('home')  # Redirect to a thank you page
     else:

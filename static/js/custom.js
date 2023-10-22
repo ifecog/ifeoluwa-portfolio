@@ -337,3 +337,7 @@
 
 // Get all of the filter buttons
 const filterButtons = document.querySelectorAll('.filter')
+
+setTimeout(function () {
+  $('#message').fadeOut('slow')
+}, 3400)
